@@ -1,0 +1,1 @@
+{"zh": "21066666666", "mm": "920aa8eb3b98f3ac5fbae141f3bb8150", "sj": "0.3", "gg": "                    \u516c\u544a", "userinfo": {"state": "True", "message": "\u67e5\u8be2", "IP": "55.77.88.99", "mac": "None", "XM": "name", "UG": "\u5b66\u751f", "TC": "\u5b66\u751f-\u79fb\u52a8-100M"}, "app_state": "1"}

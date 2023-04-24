@@ -1,0 +1,108 @@
+【验证是否登录】：
+http://1.1.1.1/Auth.ashx
+
+Content-Type: application/json
+
+Cookie: username=21066666666; password=920aa8eb3b98f3ac5fbae141f3bb8150
+
+Referer: http://1.1.1.1/
+
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.44
+负载：
+{"DoWhat":"Check"}
+响应：
+{
+  "DoWhat": "Check",
+  "Result": "needLogin",
+  "Message": "IP未登录或上线，需要验证身份！"
+}
+
+【登录请求】：
+http://1.1.1.1/Auth.ashx
+
+Content-Type: application/json
+
+Referer: http://1.1.1.1/
+
+Cookie: username=21066666666; password=920aa8eb3b98f3ac5fbae141f3bb8150
+
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.44
+负载：
+{"username":"21066666666","password":"920aa8eb3b98f3ac5fbae141f3bb8150","remember":true,"DoWhat":"Login"}
+响应：
+{
+  "username": "21066666666",
+  "password": "920aa8eb3b98f3ac5fbae141f3bb8150",
+  "remember": true,
+  "DoWhat": "Login",
+  "Result": true,
+  "Message": "身份验证成功！"
+}
+【查询信息】：
+http://1.1.1.1/Auth.ashx
+
+Content-Type: application/json
+
+Referer: http://1.1.1.1/
+
+Cookie: username=21066666666; password=920aa8eb3b98f3ac5fbae141f3bb8150
+负载：
+{"DoWhat":"GetInfo"}
+
+响应json：
+{
+  "DoWhat": "GetInfo",
+  "Data": {
+    "IP": "你的ip",
+    "MAC": "",
+    "XM": "你的名字",
+    "DP": "",
+    "UG": "学生组",
+    "MOC": 1,
+    "KXTC": [
+      {
+        "套餐名称": "学生-移动-100M"
+      }
+    ],
+    "OIA": [],
+    "CYXX": [
+      {
+        "MAC": "234567654327",
+        "Desc": "6668"
+      },
+      {
+        "MAC": "123478765437",
+        "Desc": "9909"
+      }
+    ]
+  },
+  "Result": true,
+  "Message": "查询信息成功！"
+}
+
+【请求上线】：
+http://1.1.1.1/Auth.ashx
+
+Content-Type: application/json
+
+Cookie: username=21066666666; password=920aa8eb3b98f3ac5fbae141f3bb8150
+
+Referer: http://1.1.1.1/
+
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.44
+负载：
+{"DoWhat":"OpenNet","Package":"学生-移动-100M"}
+响应：
+{
+  "DoWhat": "OpenNet",
+  "Package": "学生-移动-100M",
+  "Result": true,
+  "Message": "上线成功!"
+}
+
+{
+  "DoWhat": "OpenNet",
+  "Package": "学生-移动-100M",
+  "Result": false,
+  "Message": "套餐上线失败(须要验证手机)!由于运营商须要定期对套餐所绑定的手机进行在用激活检测，此次上线前须要验证手机。请先使用套餐【学生-移动-100M】所绑定的手机号（1234323456），拨打以下： 1234543467 其中任一电话号码。当你所拨打的电话被自动接听并挂断后，请在60秒内再次手动选择套餐上线。"
+}
