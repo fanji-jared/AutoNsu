@@ -2,7 +2,7 @@ import pickle
 import pyDes
 # 账号信息（学号，密码原文, 登录套餐名字）
 username = '21066666666'
-password = '920aa8eb3b98f3ac5fbae141f3bb8150'
+password = '密码原文'
 taocan = '学生-移动-100M'
 
 # 加密函数
